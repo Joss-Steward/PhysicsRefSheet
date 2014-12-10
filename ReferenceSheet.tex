@@ -1,0 +1,321 @@
+\documentclass[8pt, twocolumn]{article}
+\input{header.tex}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{Physics Reference Sheet}
+\rhead{Joss Steward}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+
+\section{General Equations}
+	Kinematic Equations:
+	\[
+		\begin{aligned}
+		X(t) &= X_i + V_{xi} \times t + \frac{a_x \times t ^ 2}{2} \\
+		V(t) &= V_{xi} + a_x \times t \\
+		V_x^2 &= V_{xi}^2 + 2a_x \times (\Delta X)
+		\end{aligned}		
+	\]
+
+\subsection{Springs (X = displacement from rest position)}
+	\[		
+		F_x = -kx
+	\]
+\subsection{Friction}
+	\[
+		\begin{aligned}
+		f_{smax} &= \mu_s \cdot F_N \\
+		f_k &= \mu_k \cdot F_N \\
+		F_N &= mg \\
+		f_{smax} &\geq f_k 
+		\end{aligned}		
+	\]
+
+\subsection{Dot Products}
+	\[
+		\vec{A} \cdot \vec{B} = AB \times \cos{\Theta}
+	\]
+	\[
+		\vec{A} \cdot \vec{B} = \begin{cases}
+						0 & \text{When } \vec{A} \text{ and } \vec{B} \text{ are perpendicular} \\
+						AB & \text{When } \vec{A} \text{ and } \vec{B} \text{ are parrallel}
+					 \end{cases}
+	\]
+	\[
+	\begin{aligned}
+		\vec{A} \cdot \vec{A} &= A^2 \\
+		\vec{A} \cdot \vec{B} &= \vec{B} \cdot \vec{A} \\
+		(\vec{A} + \vec{B}) \cdot \vec{C} &= (\vec{A} \cdot \vec{C}) + (\vec{B} \cdot \vec{C})
+	\end{aligned}
+	\]
+
+\subsection{Conservative and Nonconservative forces}
+	Conservative Forces - Path taken is irrelevant \newline
+	Nonconservative Forces - Path matters
+	\[\oint_c (\vec{F}) \cdot d\vec{l} = W_{total}\]
+	C is the closed path length.  This problem can be broken into pieces and solved.
+
+\subsection{Linear Motion}
+	Displacement:
+	\[\Delta X\]
+
+	Velocity:
+	\[V_x = \frac{dx}{dt}\]
+
+	Acceleration:
+	\[a_x = \frac{dv_x}{dt} = \frac{d^2x}{dt^2}\]
+
+	Constant-acceleration equations:
+	\[\begin{aligned}
+		&V_x = V_{xi} + a_xt \\
+		&\Delta X = V_{x avg}\Delta t \\
+		&V_{x avg} = \frac{1}{2}(V_{xi} + V_x \\
+		&X = X_i + V_{xi}t + \frac{1}{2}(a_xt^2) \\
+		&V_x^2 = V_{xi}^2 + 2a_x\Delta X
+	\end{aligned}\]
+
+	Force: $F_x$
+
+	Mass: $m$
+
+	Work: $dW = F_xdx$
+
+	Kinetic Energy: $K = \frac{1}{2}mv^2$
+
+	Power: $P = F_x V_x$
+
+	Momentum: $p_x = mV_x$
+
+	Newton's Second Law:
+	\[F_{x net} = ma_x = \frac{dp_x}{dt}\]
+
+\subsection{Rotational Motion}
+	Angular Displacement:
+	\[\Delta \Theta\]
+
+	Angular Velocity:
+	\[\omega = \frac{d\Theta}{dt}\]
+
+	Angular Acceleration:
+	\[\alpha = \frac{d\omega}{dt} = \frac{d^2\Theta}{dt^2}\]
+
+	Constant Angular Acceleration equations:
+	\[\begin{aligned}
+		&\omega = \omega_i + \alpha t \\
+		&\Delta \Theta = \omega_{avg}\Delta t \\
+		&\omega_{avg} = \frac{1}{2}(\omega_i + \omega) \\
+		&\Theta = \Theta_i + \omega_i t + \frac{1}{2}\alpha t^2 \\
+		&\omega^2 = \omega_i^2 + 2\alpha \Delta \Theta
+	\end{aligned}\]
+
+	Torque: $\tau$
+
+	Moment of inertia: $I$
+
+	Work: $dW = \tau d \Theta$
+
+	Kinetic Energy: $K = \frac{1}{2} I \omega^2$
+
+	Power: $P = \tau \omega$
+
+	Angular Momentum: $L = I\omega$
+
+	Newton's Second Law:
+	\[\tau_{net} = I\alpha = \frac{dL}{dt}\]
+
+\section{General Maths}
+	Quadratic Equation: 
+	\[
+		X = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+	\]
+	Vector Composition:
+	\[
+		\vec{A} = A_x \uv{i} + A_y \uv{j} + A_z \uv{k}
+	\]
+	2D Vector Decomposition:
+	\[
+		\begin{aligned}
+			V_y &= \bar{V} \times \sin{\Theta} \\
+			V_x &= \bar{V} \times \cos{\Theta} \\
+			\bar{V} &= \sqrt{V_x^2 + V_y^2}
+		\end{aligned}
+	\]
+	Standard Units:
+	\begin{itemize}
+		\item Time $\Rightarrow $ Seconds (s)
+		\item Mass $\Rightarrow $ Kilograms (kg)
+		\item Length $\Rightarrow $ Meter (m)
+		\item Force $\Rightarrow $ Newton (N) $ = \frac{1 kg / 1 m}{1 s^2} $
+		\item $ g = 9.81 m/s^2 $
+	\end{itemize}
+	Geometry:
+	\[
+		\Theta = \tan^{-1}{\frac{opp}{hyp}}
+	\]
+
+\section{Calculus}
+	General Rules:
+	\begin{enumerate}
+		\item As long as $ n \neq -1 $
+			\[
+				\int t^n dt = \frac{t^{n+1}}{n+1} + C
+			\]
+		\item For when $ n = 1 $
+			\[
+				\int t^{-1} dt = \ln{t} + C
+			\]
+	\end{enumerate}
+
+\section{Work-Kinetic Energy Theorum}
+	W-KE Equations:
+	\[\begin{aligned}
+		W_{total} &= \Delta K \\
+		K &= \frac{1}{2}mv^2 \\
+		F_{netx} &= \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2 \\
+		W_{total} &= \Delta K 
+	\end{aligned}\]
+	\newline
+	Kinematics:
+	\[\begin{aligned}
+		V_f^2 &= V_i^2 + 2a_x\Delta X \\
+		a_x &= (V_f^2 - V_i^2) \times \frac{1}{2 \Delta X}
+	\end{aligned}\]
+	\newline
+	Solving Problems:
+	\begin{enumerate}
+		\item Draw everything at initial and final positions
+		\item Add axis (x,y,z)
+		\item Draw arrows, initial and final velocities, $\Delta K$, etc
+		\item Add force arrows to inital position drawing
+		\item Calculate $W_{total} = \Delta K$, $F_{net} d = etc$
+	\end{enumerate}
+
+\section{Examples}
+\subsection{Kinematics and Integration}
+
+	The $a_x$ of a rocket is given by $ a_x = bt $ where $b$ is a positive constant. Find the position function.
+	\newline
+	Givens:
+	\[ a_x = bt \]
+	\[ X = X_0 + V_x t = V_{xi} \text{ at } t = 0 \]
+	\newline
+	Find the solution:
+	\[V_x(t) - V_x(0) = \int_{0}^{t}(bt) \mathrm{d}t = (\frac{1}{2} bt^2)\mid_{0}^{t}\]
+	\[V_x(t) = V_{xi} + \frac{1}{2} bt^2\]
+	\[X(t) - X(0) = \int_{0}^{t}(V_{xi} + \frac{1}{2}bt^2) \mathrm{d}t\]
+	\[X(t) = X_i + V_{xi} t + (\frac{1}{2}b + \frac{1}{3}t^3)\min_{0}^{t}\]
+	Solution:
+	\[X(t) = X_i + V_{xi}t + \frac{1}{6}bt^3\]
+
+\subsection{Projectile Motion}
+	Governing Equations:
+	\[V_{xi} = V_i \cos{\Theta}\]
+	\[V_{yi} = V_i \sin{\Theta}\]
+	\[V_x = V_{xi} \text{ (Assuming no drag) }\]
+	\[V_y = V_{yi} - gt\]
+	\newline
+	Derived Equations:
+	\[X(t) = X_i + V_{xi} t\]
+	\[Y(t) = Y_i + V_{yi} t + \frac{1}{2} (-g) t^2\]
+	\[Y(X) = \frac{V_{yi}}{V_{xi}}X - \frac{g}{2 \times V_{xi}^2} X^2\]
+
+\subsection{Circular Motion}
+	\[a_c = \frac{v^2}{r} \text{ Inward } a \text{ needed for const. circ. motion.}\]
+	\[v = \sqrt{a_c r}\]
+	\[v = \frac{2 \pi r}{t} \text{ t = time for 1 rev.}\]
+	\[F = ma = m \frac{v^2}{r} \text{ if } a = a_c\]
+
+\subsection{Summing Vectors}
+	Givens:
+	\[\vec{F_a} = 40.0 \text{N at } 45\deg\]
+	\[\vec{F_b} = 30.0 \text{N at } 37\deg\]
+	\newline
+	Find sum of vectors:
+	\[\vec{F_t} = \sum(F_x) \uv{i} + \sum(F_y) \uv{j}\]
+	\[\sum F_{tx} = 40 \cos (45 \deg) + 30 \cos (37 \deg) = 52.3 \text{N}\]
+	\[\sum F_{tx} = 40 \sin (45 \deg) + (- 30 \sin (37 \deg)) = 10.2 \text{N}\]
+	\[\begin{aligned}
+	\vec{F_t} &= \sqrt{10.2^2 + 52.3^2} \text{ in } \Theta \\
+	&= \tan^{-1}\frac{10.2}{52.3} = 53.3 \text{N at }11\deg \text{ towards A}\end{aligned}\]
+
+\subsection{Angle when g overcomes friction}
+	A coin is resting on an incline of increasing angle.  At what angle does it begin to slide?
+	\newline
+	Begins to slide when $F_x = F_{fric}$
+	\[\begin{aligned}
+	&\sum F_y = ma_y = 0 = F_n - mg\cos\Theta \\
+	&\sum F_x = mg\sin\Theta - f_s = 0 \end{aligned}\]
+	\[\begin{aligned}
+	mg\sin\Theta - \mu_s F_n &= 0 \\
+	mg\sin\Theta - \mu_s (mg\cos\Theta) &= 0 \\
+	mg\sin\Theta &= \mu_s mg\cos\Theta \end{aligned}\]
+	Coin starts to slide:
+	\[\frac{\sin\Theta}{\cos\Theta} = \tan(\Theta_max) = \mu_s\]
+
+\subsection{Speed at bottom of incline}
+	A block is sliding down an incline.  It slides 1.5m, what is it's final speed?
+	\newline
+	Givens:
+	\[\Theta = 60 \deg\]
+	\[V_i = 0 \text{m/s}\]
+	\[\mu_k = \mu_s = 0\]
+	\newline
+	Set-up Equations:
+	\[\begin{aligned}
+	&W = \Delta K \\
+	&K = \frac{1}{2}mv^2 \\
+	&76 \text{Joules} = \frac{1}{2}mv_f^2 - 0\end{aligned}\]
+	\newline
+	Work Done:
+	\[\begin{aligned}
+	&W = F_x \Delta X \\
+	&F_x = \sum F_x = F_g = mg\sin(60 \deg) \\
+	&W = (1.5\text{m})(6.0\text{kg})(9.81 m/s^2) \sin(60 \deg) = 76 \text{Joules} \\
+	&V_{final} = \sqrt{\frac{2 \times 76}{m}} = 5.0m/s
+	\end{aligned}\]
+
+\subsection{Potential Energy Example}
+	$\Delta U$ = Work done by a conservative force. \newline
+	\[\begin{aligned}
+		\Delta U &= - \int (\vec{F}) \cdot d \vec{l} = U_2 - U_1 \\
+		U_0 &= 0 \text{ when } y = 0 \\
+		dU &= - \vec{F} \cdot d \vec{l}
+	\end{aligned}\]
+	\[\begin{aligned}
+		&\Delta U = mgh \\
+		&Wg = \int(\vec{F})d\vec{l} = -\Delta U
+	\end{aligned}\]
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
